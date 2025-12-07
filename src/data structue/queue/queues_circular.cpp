@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-template <typename T>
 class queues_circular
 {
 private:
@@ -10,7 +9,7 @@ private:
     int rear;
     int capcity;
     int currentSize;
-    vector<T> arr;
+    vector<int> arr;
 
 public:
     queues_circular(int size) : arr(size)
@@ -21,7 +20,7 @@ public:
         capcity = size;
     };
 
-    void enqueue(T val)
+    void enqueue(int val)
     {
         if (is_full())
             return;
@@ -65,6 +64,6 @@ public:
 
 int main()
 {
-    queues_circular<int> qc(10);
+    queues_circular qc(10);
     return 0;
 }

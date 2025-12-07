@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-template <typename T>
 class Queues
 {
 private:
@@ -10,7 +9,7 @@ private:
     int rear;
     int currentSize;
     int capacity;
-    vector<T> arr;
+    vector<int> arr;
 
 public:
     Queues(int s) : arr(s)
@@ -20,7 +19,7 @@ public:
         currentSize = 0;
         capacity = s;
     }
-    void enqueue(T s)
+    void enqueue(int s)
     {
         if (isFull())
         {
@@ -31,7 +30,7 @@ public:
         rear++;
         currentSize++;
     }
-    void dequeue(T s)
+    void dequeue(int s)
     {
         if (isEmpty())
         {
@@ -53,7 +52,7 @@ public:
             return true;
         return false;
     }
-    T frontElement()
+    int frontElement()
     {
         if(isEmpty()) return 0;
         return arr[front];
@@ -66,6 +65,6 @@ public:
 
 int main()
 {
-    Queues<int> c(10);
+    Queues c(10);
     return 0;
 }
